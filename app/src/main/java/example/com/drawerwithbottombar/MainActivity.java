@@ -17,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBottomBar = BottomBar.attach(this, savedInstanceState);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, BlankFragment.newInstance("One", "Two")).commit();
+
+
+        mBottomBar = BottomBar.attach(findViewById(R.id.fragment_container), savedInstanceState);
         mBottomBar.setItems(
                 new BottomBarTab(R.mipmap.ic_launcher, "Recents"),
                 new BottomBarTab(R.mipmap.ic_launcher, "Favorites"),
@@ -49,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         });
         new DrawerBuilder().withActivity(this).withTranslucentStatusBar(false).build();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, BlankFragment.newInstance("One", "Two")).commit();
     }
 
     @Override
