@@ -2,6 +2,7 @@ package example.com.drawerwithbottombar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.roughike.bottombar.BottomBar;
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, BlankFragment.newInstance("One", "Two")).commit();
 
