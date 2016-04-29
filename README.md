@@ -1,0 +1,1 @@
+This sample app is to reproduce the issue found here: https://github.com/roughike/BottomBar/issues/188

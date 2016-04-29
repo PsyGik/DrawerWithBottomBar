@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 // The user reselected a tab at the specified position!
             }
         });
-        new DrawerBuilder().withActivity(this).build();
+        new DrawerBuilder().withActivity(this).withTranslucentStatusBar(false).build();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, BlankFragment.newInstance("One", "Two")).commit();
     }
